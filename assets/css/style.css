@@ -37,3 +37,7 @@ body{
     display: grid;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
 }
+
+.game-space .food{
+ background-color: red;   
+}
