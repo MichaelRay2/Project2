@@ -39,5 +39,9 @@ body{
 }
 
 .game-space .food{
- background: red;   
+    background: red;   
+}
+
+.game-space .head{
+    background: greenyellow
 }
