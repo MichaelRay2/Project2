@@ -10,3 +10,11 @@
     height: 70vmin;
     background: navy;
 }
+.game-info{
+    color: lightblue;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+}
