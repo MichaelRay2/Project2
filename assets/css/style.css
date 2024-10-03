@@ -16,6 +16,10 @@ body{
     width: 65vmin;
     height: 70vmin;
     background: navy;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 .game-info{
     color: lightblue;
