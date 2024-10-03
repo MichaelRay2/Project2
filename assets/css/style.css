@@ -4,3 +4,9 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
+.outer-wrapper{
+    width: 65vmin;
+    height: 70vmin;
+    background: navy;
+}
