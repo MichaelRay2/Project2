@@ -1,5 +1,5 @@
 const playBoard = document.querySelector(".game-space");
-let foodX = 13, foodY = 10;
+let foodX, foodY;
 const moveFood = () => {
     // Assigning random x and y co-ordinate for food
     foodX = math.floor(Math.random() * 30) + 1;
