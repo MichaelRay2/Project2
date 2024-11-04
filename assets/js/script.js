@@ -22,7 +22,7 @@ const changeDirection = (e) => {
         speedX = 1;
         speedY = 0;
     }
-    initGame();
+    
 }
     
 
@@ -37,6 +37,7 @@ const initGame = () => {
     htmlMarkup += `<div class="head" style="grid-area: ${snakeY} / ${snakeX}"></div>`;
     playBoard.innerHTML = htmlMarkup;
 }
+
 moveFood();
-initGame();
+setInterval(initGame, 125);
 document.addEventListener("keydown", changeDirection);
