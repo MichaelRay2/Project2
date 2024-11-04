@@ -23,16 +23,16 @@ const handleGameOver = () => {
 
 const changeDirection = (e) => {
     // Changing direction based on arrow clicked
-    if(e.key === "ArrowUp"){
+    if(e.key === "ArrowUp" && speedY != 1){
         speedX = 0;
         speedY = -1
-    }else if(e.key === "ArrowDown"){
+    }else if(e.key === "ArrowDown" && speedY != -1){
         speedX = 0;
         speedY = 1;
-    }else if(e.key === "ArrowLeft"){
+    }else if(e.key === "ArrowLeft" && speedX != 1){
         speedX = -1;
         speedY = 0;
-    }else if(e.key === "ArrowRight"){
+    }else if(e.key === "ArrowRight" && speedX != -1){
         speedX = 1;
         speedY = 0;
     }
