@@ -36,17 +36,23 @@ const initGame = () => {
         console.log(snakeBody);
     }
 
+    // Moving forward the values of the snake body elements one at a time
+    for (let i = snakeBody.length - 1; i >0; i--){
+        snakeBody[i] = snakeBody[i - 1];
+    }
+
+    // Setting first element of snake body to current snake position
+    snakeBody[0] = [snakeX, snakeY];
+
     // Updating snake's head position based on the current speed
     snakeX += speedX;
     snakeY += speedY;
 
     for(let i = 0; i < snakeBody.length; i++){
         // Adding a div element for each cell of the snake's body
-        htmlMarkup += `<div class="head" style="grid-adrea": ${snakeBody[i][1]} /> ${snakeBody[i][0]}"></div>`;
+        htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
     }
 
-
-    htmlMarkup += `<div class="head" style="grid-area: ${snakeY} / ${snakeX}"></div>`;
     playBoard.innerHTML = htmlMarkup;
 }
 
