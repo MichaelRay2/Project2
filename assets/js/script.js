@@ -71,7 +71,7 @@ const initGame = () => {
         htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
 
         // Check if snake's head hit the body, if yes set game over is true
-        if(i !== 0 && snakebody[0][1] === snakeBody[i][1] && snakeBody && snakeBody[0][0] === snakeBody[i][0]){
+        if(i !== 0 && snakebody[0][1] === snakeBody[i][1] && snakeBody[0][0] && snakeBody[i][0] === snakeBody[i][0]){
             gameOver = true;
         }
     }
