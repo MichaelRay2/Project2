@@ -1,4 +1,7 @@
 const playBoard = document.querySelector(".game-space");
+const scoreElement = document.querySelector(".score");
+const highscoreElement = document.querySelector(".high-score");
+
 
 let gameOver = false;
 let foodX, foodY;
@@ -6,6 +9,10 @@ let snakeX = 5, snakeY = 10;
 let snakeBody = [];
 let speedX = 0, speedY = 0;
 let setIntervalId;
+let score = 0;
+
+// Returning high score from the local storage
+let highscore = localStorage.getItem("high-score") || 0;
 
 const moveFood = () => {
     // Assigning random x and y co-ordinate for food
@@ -44,9 +51,15 @@ const initGame = () => {
     if(gameOver) return handleGameOver();
     let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
     // Check to see if snake ate the food
-    if(snakeX === foodX && snakeY == foodY){
+    if(snakeX === foodX && snakeY === foodY){
         moveFood();
         snakeBody.push([foodX, foodY]); // push food position to array of snake body
+        score++;
+        // Increments score by one
+        highScore = score >= highscore ? score : highscore;
+        localStorage.setItem("high-score", highScore);
+        scoreElement.innerText = `Score: ${score}`;
+        highscoreElement.innerText = `score: ${score}`;
     }
 
     // Moving forward the values of the snake body elements one at a time
@@ -71,7 +84,7 @@ const initGame = () => {
         htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
 
         // Check if snake's head hit the body, if yes set game over is true
-        if(i !== 0 && snakebody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]){
+        if(i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]){
             gameOver = true;
         }
     }
